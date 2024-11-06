@@ -21,6 +21,20 @@ echo "Installing Python dependencies..."
 pip install -r requirements.txt
 pip install gdown
 
+
+# Create the 'data' directory
+echo "Creating 'data' directory..."
+mkdir -p data
+
+# Verify directory creation
+if [ -d "data" ]; then
+    echo "'data' directory created successfully."
+else
+    echo "Failed to create 'data' directory."
+    exit 1
+fi
+
+
 # Download Kaggle dataset
 echo "Downloading Kaggle dataset..."
 
