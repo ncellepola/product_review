@@ -5,11 +5,6 @@ set -e
 
 echo "Starting setup process..."
 
-# Clone the repository
-echo "Cloning repository..."
-git clone https://github.com/ncellepola/aamzon_sentiment_analysis.git
-cd aamzon_sentiment_analysis
-
 # Create and activate virtual environment
 echo "Setting up Python virtual environment..."
 python -m venv venv
@@ -24,11 +19,11 @@ fi
 # Install dependencies
 echo "Installing Python dependencies..."
 pip install -r requirements.txt
-pip install kagglehub
+pip install gdown
 
 # Download Kaggle dataset
 echo "Downloading Kaggle dataset..."
-export KAGGLE_CONFIG_DIR=.kaggle/kaggle.json
+
 python -m bin.download_data
 
 # Start Docker containers
